@@ -1,0 +1,35 @@
+_all_users:
+    path:     /users/all
+    defaults: { _controller: MobileapiBundle:usermobile:AllUsers }
+
+_new_user:
+    path:     /users/new
+    defaults: { _controller: MobileapiBundle:usermobile:newUser }
+
+_recap_users:
+    path:     /users/user/{id}
+    defaults: { _controller: MobileapiBundle:usermobile:reacapUser }
+
+_update_user:
+    path:     /users/update
+    defaults: { _controller: MobileapiBundle:usermobile:updateUser }
+
+_Desactiver_user:
+    path:     /users/desactiver
+    defaults: { _controller: MobileapiBundle:usermobile:desactiverUser }
+
+_activer_user:
+    path:     /users/activer
+    defaults: { _controller: MobileapiBundle:usermobile:activerUser }
+
+_a_d_d_facture:
+    path:     /ADDFacture
+    defaults: { _controller: MobileapiBundle:facture:ADDFacture }
+
+_a_l_l_facture:
+    path:     /ALLFacture
+    defaults: { _controller: MobileapiBundle:facture:ALLFacture }
+
+_paye_facture:
+    path:     /PayeFacture
+    defaults: { _controller: MobileapiBundle:facture:PayeFacture }

@@ -1,0 +1,59 @@
+enfants_homepage:
+    path:     /
+    defaults: { _controller: EnfantsBundle:Default:index }
+
+enfants_ajoutEnfants:
+    path:     /ajoutEnfant
+    defaults: { _controller: EnfantsBundle:Enfant:ajoutEnfants }
+
+enfants_afficheEnfants:
+    path:     /afficheEnfant
+    defaults: { _controller: EnfantsBundle:Enfant:afficheEnfant }
+
+enfant_supEnfant:
+    path:     /supEnfant/{id}
+    defaults: { _controller: EnfantsBundle:Enfant:supprimerEnfant }
+
+
+enfants_edit:
+    path:     /{id}/edit
+    defaults: { _controller: EnfantsBundle:Enfant:edit }
+    methods:  [GET, POST]
+
+enfants_ob:
+    path:     /ob
+    defaults: { _controller: EnfantsBundle:Enfant:ob }
+
+enfants_ob2:
+    path:     /ob2
+    defaults: { _controller: EnfantsBundle:Enfant:ob2 }
+
+enfants_ob3:
+    path:     /ob3
+    defaults: { _controller: EnfantsBundle:Enfant:ob3 }
+
+enfants_recherche:
+    path:     /recherche
+    defaults: { _controller: EnfantsBundle:Enfant:rechercheByLieu }
+
+enfants_recherche2:
+    path:     /recherche2
+    defaults: { _controller: EnfantsBundle:Enfant:rechercheByNom }
+
+enfants_recherche3:
+    path:     /recherche3
+    defaults: { _controller: EnfantsBundle:Enfant:rechercheByMedicin }
+
+
+
+
+enfants_afficheEnfantsGuest:
+    path:     /afficheEnfantguest
+    defaults: { _controller: EnfantsBundle:Enfant:afficheEnfantGuest }
+
+enfants_rechercheGuest:
+    path:     /rechercheGuest
+    defaults: { _controller: EnfantsBundle:Enfant:rechercheByNomGuest }
+
+
+

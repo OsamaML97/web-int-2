@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <html>
+    <body>
+    <h1>Test</h1>
+    <form action={{path('sendsms_route')}} method="POST">
+        <table>
+            <tr>
+                <td><label>Enter mobile number</label></td>
+                <td><input type="text" name="mobile"> </td>
+
+
+            </tr>
+
+            <tr>
+                <td><label>send message</label></td>
+                <td><textarea name="message" rows="5" cols="22" ></textarea> </td>
+
+
+
+            </tr>
+            <tr>
+                <td><input type="submit" value="Send Message"></td>
+
+            </tr>
+
+
+
+
+
+
+
+        </table>
+
+    </form>
+
+    </body>
+
+    </html>
+{% endblock %}

@@ -1,0 +1,30 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+Page_Parent:
+    path:     /pageParent
+    defaults: { _controller: UserBundle:Default:Parent }
+
+Page_Admin:
+    path:     /admin
+    defaults: { _controller: UserBundle:Default:Admin }
+
+Page_Responsable:
+    path:     /pageResponsable
+    defaults: { _controller: UserBundle:Default:Responsable }
+Page_infoUser:
+    path:     /infoUser
+    defaults: { _controller: UserBundle:Default:infoUser }
+List_users:
+    path:     /admin/List
+    defaults: { _controller: UserBundle:Default:List_User }
+Desactiver_users:
+    path:     /admin/Des/{id}
+    defaults: { _controller: UserBundle:Default:Desactiver_User }
+activer_users:
+    path:     /admin/act/{id}
+    defaults: { _controller: UserBundle:Default:Activer_User }
+Facture_User:
+    path:     /Facture
+    defaults: { _controller: UserBundle:Default:Facture_User }
+

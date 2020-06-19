@@ -1,0 +1,97 @@
+{% extends "@User/Page_Admin.html.twig" %}
+
+{% block body %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#nacir tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+
+    <div class="col-lg-20">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+
+                <table class="mb-0 table table-hover">
+
+                    <input class="form-control" id="myInput" type="text" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+                    <thead>
+
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>UserName</th>
+                        <th>Mail</th>
+                        <th>Enable</th>
+                        <th>Activer/Desactiver</th>
+
+                        <th>Facture</th>
+                    </tr>
+                    </thead>
+                    <tbody id="nacir">
+                    {% for e in users %}
+                        {%  if e.roles[0]=="ROLE_PARENT"  %}
+                    <tr>
+
+
+                        <td> {{e.id}}</td>
+<td> {{e.lastName}}</td>
+                        <td> {{e.firstName}}</td>
+                        <td> {{e.username}}</td>
+                        <td> {{e.email}}</td>
+                         {% if e.enabled=='true' %}
+
+                        <td> <p style="color:green;"> Active</p></td>
+                             {% else %}
+                                 <td><p style="color:red;"> Desactive</p></td>
+                                 {% endif %}
+                        {% if e.enabled=='true' %}
+                            <td>     <a href="{{ path('Desactiver_users',{('id'):e.id }) }}" class="info" > <button class="btn btn-success btn-xs"><i class=" fa fa-info"></i></button></a>
+                            </td>
+
+                        {% else %}
+                            <td>     <a href="{{ path('activer_users',{('id'):e.id }) }}" class="info" > <button class="btn btn-success btn-xs"><i class=" fa fa-info"></i></button></a>
+                            </td>
+
+                            {% endif %}
+
+
+                        {% for f in factures %}
+
+                        {% if f.id_U == e.id %}
+                            {% if f.Etat=="non paye" %}
+                                <td><p style="color:red;"> non paye</p></td>
+                                {% else %}
+                                    <td> <p style="color:green;"> payee</p></td>
+                                    {% endif %}
+
+
+
+                            {% else %}
+
+                            {% endif %}
+
+                        {% endfor %}
+
+                        <td>     <a href="{{ path('Add_Fact',{('id'):e.id }) }}" class="info" > <button class="btn btn-danger btn-xs"><i class=" fa fa-info"></i></button></a>
+                        </td>
+
+                    </tr>
+                        {%  endif %}
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

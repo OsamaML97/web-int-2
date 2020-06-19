@@ -1,0 +1,32 @@
+
+
+{% extends "@User/Page_Admin.html.twig" %}
+
+
+
+{% block body %}
+    {{ form_start(form) }}
+
+    <div class="form-row">
+        <div class="col-md-7"><div class="position-relative form-group">
+                titre: {{ form_widget(form.titre, { 'attr': {'class': 'form-control'} }) }}</br>
+            </div> </div>
+        <div class="col-md-7"><div class="position-relative form-group">
+                description: {{ form_widget(form.discription, { 'attr': {'class':'form-control'} }) }}</br>
+            </div></div>
+        <div class="col-md-7">
+            Date de  l'evenement: {{ form_widget(form.dateEvent, { 'attr': {'class':'form-control'} }) }}</br>
+        </div>
+        <div class="col-md-7">
+            lieu: {{ form_widget(form.lieu, { 'attr': {'class':'form-control'} }) }}</br>
+        </div>
+        <div class="col-md-7">
+            Nombre de places: {{ form_widget(form.nbrplace, { 'attr': {'class':'form-control'} }) }}</br>
+        </div>
+    </div>
+
+    <br>
+
+    <input type="submit" value="Enregistrer" class="btn btn-success"/>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,64 @@
+evenement_homepage:
+    path:     /
+    defaults: { _controller: EvenementBundle:Default:index }
+
+evenement_Ajout:
+    path:     /admin/AjouterEvenement
+    defaults: { _controller: EvenementBundle:Evenement:AjoutEvenement }
+
+evenement_Affiche:
+    path:     /admin/AfficherEvenement
+    defaults: { _controller: EvenementBundle:Evenement:AfficheEvenement }
+
+evenement_Supprimer:
+    path:     /admin/SupprimerEvenement/{id}
+    defaults: { _controller: EvenementBundle:Evenement:deleteEvent }
+
+evenement_Modifier:
+    path:     /admin/ModifierEvenement/{id}
+    defaults: { _controller: EvenementBundle:Evenement:editEvenement }
+
+Comment:
+    path:     /Parent/AddComment/{id}
+    defaults: { _controller: EvenementBundle:Commentaire:AfficheAddComment }
+
+Comment_edit:
+    path:     /Parent/editComment/{idc}/{ide}
+    defaults: { _controller: EvenementBundle:Commentaire:editCommentaire }
+
+Comment_delete:
+    path:     /Parent/deliteComment/{idc}/{ide}
+    defaults: { _controller: EvenementBundle:Commentaire:deleteComment }
+
+Reservation_ajout:
+    path:     /Parent/AjoutReservation/{id}
+    defaults: { _controller: EvenementBundle:Reservation:AjoutReservation }
+
+
+Reservation_AfficheAdmin:
+    path:     /admin/AfficherReservation
+    defaults: { _controller: EvenementBundle:Reservation:AfficheReservationAdmin }
+
+
+Reservation_Delete:
+    path:     /admin/annuler/{id}
+    defaults: { _controller: EvenementBundle:Reservation:deleteReservationAdmin }
+
+AfficherReservationClient:
+    path:     /Parent/afficherReservation
+    defaults: { _controller: EvenementBundle:Reservation:ListeReservationClient }
+
+
+AnnulerReservation:
+    path:     /Parent/annulerReservation/{id}
+    defaults: { _controller: EvenementBundle:Reservation:deleteReservationClient }
+
+Stat:
+    path:     /Statistique
+    defaults: { _controller: EvenementBundle:Statistique:index }
+
+rate_:
+    path:     /Parent/rate
+    defaults: { _controller: EvenementBundle:Evenement:rate }
+
+

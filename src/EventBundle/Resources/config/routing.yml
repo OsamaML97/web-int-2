@@ -1,0 +1,24 @@
+event_homepage:
+    path:     /event
+    defaults: { _controller: EventBundle:Default:index }
+
+event_ajoutEvent:
+    path:     /ajoutevent
+    defaults: { _controller: EventBundle:Event:ajoutEvent }
+
+event_afficheEvent:
+    path:     /afficheEvent
+    defaults: { _controller: EventBundle:Event:afficheEvent }
+
+event_supEvent:
+    path:     /supEvent/{id}
+    defaults: { _controller: EventBundle:Event:supprimerEvent }
+
+event_edit:
+    path:     /{id}/editevent
+    defaults: { _controller: EventBundle:Event:edit }
+    methods:  [GET, POST]
+
+event_afficheEventGuest:
+    path:     /afficheEventGuest
+    defaults: { _controller: EventBundle:Event:afficheEventGuest }

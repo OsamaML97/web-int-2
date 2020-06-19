@@ -1,0 +1,44 @@
+<table border="1">
+
+
+
+    <tr>
+
+        <th>#</th>
+        <th>Montant</th>
+        <th>Delais</th>
+        <th>Etat</th>
+
+
+    </tr>
+    </thead>
+    <tbody id="nacir">
+    {% for f in factures %}
+        {% if f.id_U==user.id %}
+            <tr>
+
+                <td>Facture</td>
+
+                <td>{{f.Montant}}</td>
+
+                <td>{{f.Delais|date}}</td>
+
+
+                {% if f.Etat=="non paye" %}
+                    <td><p style="color:red;"> non paye</p></td>
+                {% else %}
+                    <td> <p style="color:green;"> payee</p></td>
+                {% endif %}
+
+
+
+            </tr>
+        {% endif %}
+
+
+    {% endfor %}
+
+
+
+    </tbody>
+</table>

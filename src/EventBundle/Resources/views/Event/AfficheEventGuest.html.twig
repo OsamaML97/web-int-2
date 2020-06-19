@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div id="page_content" class="grid_16">
+    <div>
+        <h2>Special Event Descriptions</h2>
+        <p>Although there is so much happening on a daily basis, Bala House Montessori and our Parents’ Association host special annual events to create a community atmosphere for our students and their families. We know the largest educational gains occur when teachers, students and parents work together towards the same goals. These events enable children to demonstrate their experiences in the classroom, parents to meet and greet one another and teachers to build stronger partnerships with parents.</p>
+    </div>
+
+
+    <table class="table table-dark" border="1" id="myTable">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Month</th>
+            <th scope="col">Start day</th>
+            <th scope="col">End day</th>
+            <th scope="col">Event purpose</th>
+            <th scope="col">Event Description</th>
+
+
+        </tr>
+        </thead>
+        {% for e in event %}
+            <tr>
+                <th scope="row"> {{ e.EvName }} </th>
+                <td>{{ e.Evmonth }}</td>
+                <td>{{ e.EvStart}}</td>
+                <td>{{ e.EvEnd}}</td>
+                <td>{{ e.EvPur }}</td>
+                <td>{{ e.EvDesc }}</td>
+
+
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

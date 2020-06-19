@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table class="table table-dark" border="1" id="myTable">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">sexe</th>
+            <th scope="col">Date Naissance</th>
+            <th scope="col">Lieu</th>
+            <th scope="col">Medecin</th>
+            <th scope="col">Numero Medecin</th>
+            <th scope="col">Manipulation</th>
+
+        </tr>
+        </thead>
+        {% for e in enfants %}
+            <tr>
+                <th scope="row"> {{ e.nom }} </th>
+                <td>{{ e.prenom }}</td>
+                <td>{{ e.sexe }}</td>
+                <td>{{ e.dateNaissance}}</td>
+                <td>{{ e.lieuNaissance }}</td>
+                <td>{{ e.medicin }}</td>
+                <td>{{ e.medecinNumero }}</td>
+                <td><a href={{ path('enfant_supEnfant',{'id':e.id}) }}>Delete</a>    <a href={{ path('enfants_edit',{'id':e.id}) }}>Update</a></td>
+
+
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+{% endblock %}
+
+

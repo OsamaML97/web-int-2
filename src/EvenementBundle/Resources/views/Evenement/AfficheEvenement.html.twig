@@ -1,0 +1,58 @@
+{% extends "@User/Page_Admin.html.twig" %}
+
+{% block body %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#nacir tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+
+    <div class="col-lg-20">
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+
+            <table class="mb-0 table table-hover">
+
+                <input class="form-control" id="myInput" type="text" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+                <thead>
+
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Date Evenement</th>
+                    <th>Lieu</th>
+                    <th>Nombre de Places</th>
+                    <th>Actino</th>
+                </tr>
+                </thead>
+                <tbody id="nacir">
+                <tr>
+                    {% for e in event %}
+
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.titre}}</td>
+                    <td>{{ e.dateEvent|date}}</td>
+                    <td>{{ e.discription}}</td>
+                    <td>{{ e.lieu}}</td>
+                    <td>{{ e.nbrplace}}</td>
+                    <td><a href="{{ path('evenement_Supprimer',{'id':e.id}) }}">Delete</a><br>
+                        <a href="{{ path('evenement_Modifier',{'id':e.id}) }}">Modifier</a></td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

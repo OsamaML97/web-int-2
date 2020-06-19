@@ -1,0 +1,13 @@
+Add_Fact:
+  path:     /admin/facture/{id}
+  defaults: { _controller: FactureBundle:Default:ADD_Facture }
+Paye_Facture:
+  path:     /facture_paye/{id}
+  defaults: { _controller: FactureBundle:Default:Paye_Facture }
+
+Faire_PDF:
+  path:     /Faire_PDF
+  defaults: { _controller: FactureBundle:Default:Faire_PDF }
+
+
+
